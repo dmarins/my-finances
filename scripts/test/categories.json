@@ -1,0 +1,32 @@
+[
+  {
+    "PK": "USER#123e4567-e89b-12d3-a456-426614174000",
+    "SK": "CATEGORY#despesas_fixas",
+    "Name": "Despesas Fixas"
+  },
+  {
+    "PK": "USER#123e4567-e89b-12d3-a456-426614174000",
+    "SK": "CATEGORY#despesas_variaveis",
+    "Name": "Despesas Variáveis"
+  },
+  {
+    "PK": "USER#123e4567-e89b-12d3-a456-426614174000",
+    "SK": "CATEGORY#receitas",
+    "Name": "Receitas"
+  },
+  {
+    "PK": "USER#123e4567-e89b-12d3-a456-426614174000",
+    "SK": "CATEGORY#investimentos",
+    "Name": "Investimentos"
+  },
+  {
+    "PK": "USER#123e4567-e89b-12d3-a456-426614174000",
+    "SK": "CATEGORY#cartao_de_credito",
+    "Name": "Cartão de Crédito"
+  },
+  {
+    "PK": "USER#123e4567-e89b-12d3-a456-426614174000",
+    "SK": "CATEGORY#cheque_especial",
+    "Name": "Cheque Especial"
+  }
+]

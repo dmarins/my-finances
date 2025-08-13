@@ -1,0 +1,33 @@
+services:
+  localstack:
+    image: localstack/localstack:2.3.2
+    container_name: my-finances-localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=dynamodb
+      - DEFAULT_REGION=sa-east-1
+      - AWS_DEFAULT_REGION=sa-east-1
+      - FORCE_NONINTERACTIVE=1
+      - USE_SSL=0
+      - DEBUG=1
+      - DATA_DIR=/var/lib/localstack/data
+    volumes:
+      - my-finances-tmp:/var/lib/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
+    healthcheck:
+      test: curl -f "http://localhost:4566/_localstack/health"
+
+  dynamodb-viewer:
+    image: aaronshaf/dynamodb-admin:latest
+    container_name: my-finances-dynamodb-viewer
+    ports:
+      - "8001:8001"
+    environment:
+      DYNAMO_ENDPOINT: http://localstack:4566
+      AWS_REGION: sa-east-1
+    depends_on:
+      - "localstack"
+
+volumes:
+  my-finances-tmp:
